@@ -1,0 +1,7 @@
+- hosts: all
+  become: true
+  remote_user: coding
+  vars_files:
+    - gitlab_access_token.yml
+  roles:
+    - { role: riemers.gitlab-runner }

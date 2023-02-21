@@ -1,0 +1,8 @@
+stages:
+  -build
+
+
+build-code-job:
+  stages: build
+  script :
+   -cp
