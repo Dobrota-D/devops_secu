@@ -2,7 +2,7 @@
   hosts: all
   become: true
   gather_facts: false
-  remote_user: coding
+  remote_user: anarion
   vars:
     username: esiee
     userpass: esiee
@@ -20,18 +20,3 @@
       authorized_key: user=esiee
                     key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
                     state=present
-    - name: Install Nginx
-      ansible.builtin.package:
-        name: nginx
-        state: present
-    - name: Start Nginx
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
-    - name: Create html directory
-      ansible.builtin.file:
-        path: /var/www/html
-        state: directory
-        owner: esiee
-        mode: 0777

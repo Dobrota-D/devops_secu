@@ -1,6 +1,6 @@
 - hosts: all
   become: true
-  remote_user: coding
+  remote_user: anarion
   vars_files:
     - gitlab_access_token.yml
   roles:
